@@ -1,4 +1,4 @@
-$m2e_path = "C:\Users\hellw\OneDrive - Colorado Community College System\COM120\Essays\Module-2\M2E_Mars-Venus-Earth"
+$m2e_path = "C:\Users\hellw\OneDrive - Colorado Community College System\COM120\Module-2\M2E_Mars-Venus-Earth"
 
 Write-Host 'Cleaning LaTeX Project'
 Remove-Item "$m2e_path\*_temp.tex"
@@ -36,6 +36,9 @@ Remove-Item "$m2e_path\*.run.xml"
 Remove-Item "$m2e_path\*.pdf"
 
 Write-Host 'Building LaTeX Project'
+& 'C:\Program Files\MiKTeX\miktex\bin\x64\latexmk.exe' '-pdf' '-pdflatex="pdflatex -interaction=nonstopmode"'
+& 'C:\Program Files\MiKTeX\miktex\bin\x64\biber.exe' 'main'
+& 'C:\Program Files\MiKTeX\miktex\bin\x64\latexmk.exe' '-pdf' '-pdflatex="pdflatex -interaction=nonstopmode"'
 & 'C:\Program Files\MiKTeX\miktex\bin\x64\latexmk.exe' '-pdf' '-pdflatex="pdflatex -interaction=nonstopmode"'
 
 Write-Host 'Moving File to out/ASHELLWIG_M1E_Picture-Perfect.pdf'
