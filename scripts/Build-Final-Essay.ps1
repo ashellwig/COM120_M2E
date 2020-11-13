@@ -42,9 +42,10 @@ Write-Host 'Building LaTeX Project'
 & 'C:\Program Files\MiKTeX\miktex\bin\x64\latexmk.exe' '-pdf' '-pdflatex="pdflatex -interaction=nonstopmode"'
 
 Write-Host 'Moving File to out/ASHELLWIG_M1E_Picture-Perfect.pdf'
-Move-Item -Path "$m2e_path\main.pdf" -Destination "$m2e_path\out\ASHELLWIG_M1E_Picture-Perfect.pdf"
+Move-Item -Path "$m2e_path\main.pdf" -Destination "$m2e_path\out\ASHELLWIG_M2E_Mars-Venus-Earth.pdf"
 
 Write-Host 'Cleaning Project Directory'
+& 'C:\Program Files\MiKTeX\miktex\bin\x64\latexmk.exe' '-CA'
 Remove-Item "$m2e_path\*_temp.tex"
 Remove-Item "$m2e_path\*.aux"
 Remove-Item "$m2e_path\*.4ct"
